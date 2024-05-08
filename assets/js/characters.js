@@ -4,12 +4,12 @@ fetch(`https://swapi.py4e.com/api/people`)
 	const characterListContainer = document.getElementById('characterList')
 
 	const imageUrls = {
-		"Luke Skywalker" : "../../images/characterImages/LukeSkywalker.jpeg",
-		"Darth Vader" : "../../images/characterImages/darthVader.jpeg",
-		"Leia Organa" : "../../images/characterImages/LeiaOrgana.jpeg",
-		"R2-D2" : "../../images/characterImages/R2D2.jpeg",
-		"Obi-Wan Kenobi" : "../../images/characterImages/ObiWanKenobi.jpeg",
-		"C-3PO" : "../../images/characterImages/C-3PO.jpeg"
+		"Luke Skywalker" : "../images/characterList/LukeSkywalker.jpeg",
+		"Darth Vader" : "../images/characterList/darthVader.jpeg",
+		"Leia Organa" : "../images/characterList/LeiaOrgana.jpeg",
+		"R2-D2" : "../images/characterList/R2D2.jpeg",
+		"Obi-Wan Kenobi" : "../images/characterList/ObiWanKenobi.jpeg",
+		"C-3PO" : "../images/characterList/C-3PO.jpeg"
 	};
 
 	const selectedCharacterNames = [

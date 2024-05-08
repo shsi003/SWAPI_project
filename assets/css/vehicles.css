@@ -1,58 +1,3 @@
-/*body{
-	margin:0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-.CharacterList {
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: auto 0;
-	flex-direction: column;
-	max-width: 800px;
-	padding: 20px;
-
-}
-
-img{
-	align-items: center;
-	width: 200px;
-	height: auto;
-	margin: 0 auto;
-	display: block;
-	
-}
-
-div {
-	border: 2px solid black;
-	margin: 10px;
-	padding: 10px;
-	width: 100vh;
-	
-
-}
-
-p{
-	display:flex;
-	flex-direction: column;
-	background: darkblue;
-	color: white;
-	align-items: center;
-	justify-content: center;
-
-}
-
-
-h2 {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	
-}*/
-
-
 body {
     margin: 0;
     padding: 0;
@@ -72,7 +17,7 @@ body {
 }
 
 
-.CharacterList {
+.VehicleList {
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -81,7 +26,7 @@ body {
     padding: 20px;
 }
 
-.CharacterList div {
+.VehicleList div {
     border: 2px solid black;
     margin: 10px;
     padding: 10px;
@@ -89,7 +34,7 @@ body {
 	
 }
 
-.CharacterList img {
+.VehicleList img {
     width: 200px;
     height: auto;
     margin: 0 auto;
@@ -97,14 +42,14 @@ body {
     display: block;
 }
 
-.CharacterList p {
+.VehicleList p {
     background: lightblue;
     color: white;
     text-align: center; 
 	border: 2px solid black;
 }
 
-.CharacterList h2 {
+.VehicleList h2 {
     text-align: center; 
 	background: darkblue;
 	color: white;
