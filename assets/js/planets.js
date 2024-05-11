@@ -4,12 +4,12 @@ fetch(`https://swapi.py4e.com/api/planets`)
 	const planetListContainer = document.getElementById(`planetList`)
 
 	const imageUrls = {
-		"Tatooine" : "../images/planetList/Tatooine.jpeg",
-		"Dagobah" : "../images/planetList/Dagobah.jpeg",
-		"Naboo" : "../images/planetList/Naboo.jpeg",
-		"Coruscant" : "../images/planetList/Coruscant.jpeg",
-		"Endor" : "../images//planetList/Endor.jpeg",
-		"Hoth" : "../images/plametList/Hoth.jpeg",
+		"Tatooine" : "../images/planetsList/Tatooine.jpeg",
+		"Dagobah" : "../images/planetsList/Dagobah.jpeg",
+		"Naboo" : "../images/planetsList/Naboo.jpeg",
+		"Coruscant" : "../images/planetsList/Coruscant.jpeg",
+		"Endor" : "../images//planetsList/Endor.jpeg",
+		"Hoth" : "../images/planetsList/Hoth.jpeg",
 	};
 
 	const selectedPlanetNames = [
