@@ -25,11 +25,11 @@ fetch(`https://swapi.py4e.com/api/planets`)
 			planetElement.innerHTML = `
 			<h2>${planet.name}</h2>
 			<img src="${imageUrls[planet.name]}" alt="${planet.name}"></img>
-			<p> climate: ${planet.climate}</p>
-			<p>gravity: ${planet.gravity}</p>
-			<p>population: ${planet.population}</p>
-			<p>terrain: ${planet.terrain}</p>
-			<p>diameter: ${planet.diameter}</p>
+			<p> Climate: ${planet.climate}</p>
+			<p>Gravity: ${planet.gravity}</p>
+			<p>Population: ${planet.population}</p>
+			<p>Terrain: ${planet.terrain}</p>
+			<p>Diameter: ${planet.diameter}</p>
         
 			`
 		;

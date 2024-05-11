@@ -24,7 +24,7 @@ showFetchData();
 async function showFetchData(){
 	try{
 
-		const response = await fetch (`https://swapi.py4e.com/api/films`);
+		const response = await fetch (`https://swapi.py4e.com/api/people`);
 
 		if(!response.ok){
 			throw new Error("could not fetch data");

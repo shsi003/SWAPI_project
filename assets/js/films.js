@@ -4,12 +4,12 @@ fetch(`https://swapi.py4e.com/api/films`)
 	const filmListContainer = document.getElementById(`filmList`)
 
 	const imageUrls = {
-		"Tatooine" : "../images/planetsList/Tatooine.jpeg",
-		"Dagobah" : "../images/planetsList/Dagobah.jpeg",
-		"Naboo" : "../images/planetsList/Naboo.jpeg",
-		"Coruscant" : "../images/planetsList/Coruscant.jpeg",
-		"Endor" : "../images//planetsList/Endor.jpeg",
-		"Hoth" : "../images/planetsList/Hoth.jpeg",
+		"A New Hope" : "../images/filmList/ANewHope.jpeg",
+		"The Empire Strikes Back" : "../images/filmList/TheEmpireStrikesBack.jpeg",
+		"Return of the Jedi" : "../images/filmList/ReturnoftheJedi.jpeg",
+		"The Phantom Menace" : "../images/filmList/ThePhantomMenace.jpeg",
+		"Attack of the Clones" : "../images//filmList/attackoftheClones.jpeg",
+		"Revenge of the Sith" : "../images/filmList/RevengeoftheSith.jpeg",
 	};
 
 	const selectedFilmNames = [
@@ -17,7 +17,7 @@ fetch(`https://swapi.py4e.com/api/films`)
 		"The Phantom Menace", "Attack of the Clones", "Revenge of the Sith"
 	];
 
-	const selectedFilms = data.results.filter(planet => selectedFilmNames.includes(film.title));
+	const selectedFilms = data.results.filter(film => selectedFilmNames.includes(film.title));
 
 	selectedFilms.forEach(film => {
 
@@ -25,10 +25,19 @@ fetch(`https://swapi.py4e.com/api/films`)
 			filmElement.innerHTML = `
 			<h2>${film.title}</h2>
 			<img src="${imageUrls[film.title]}" alt="${film.name}"></img>
+			<p>Directed by ${film.director}</p>
+			<p>Release date: ${film.release_date}</p>
+			<p>Synopsis: ${film.opening_crawl}</p>
+			<p>Produced by ${film.producer}</p>
 			
         
 			`
 		;
+
+	
+	
+
+
 
 		filmListContainer.appendChild(filmElement);
 

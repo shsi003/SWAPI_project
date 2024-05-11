@@ -26,24 +26,85 @@ fetch(`https://swapi.py4e.com/api/people`)
             characterElement.innerHTML = `
                 <h2>${character.name}</h2>
 				<img src="${imageUrls[character.name]}" alt="${character.name}"></img>
-                <p>height: ${character.height}</p>
-				<p>gender: ${character.gender}</P>
-				<p>eye color: ${character.eye_color}</p>
-				<p>date of birth: ${character.birth_year}</p>
-				<p>hair: ${character.hair_color}</p>
+                <p>Height: ${character.height}</p>
+				<p>Gender: ${character.gender}</P>
+				<p>Eye color: ${character.eye_color}</p>
+				<p>Date of birth: ${character.birth_year}</p>
+				<p>Hair: ${character.hair_color}</p>
 				
 				
 				`;
+
+			if (character.films.length > 0) {
+
+				const filmTitles = character.films.map(filmLink => {
+					return fetch (filmLink)
+					.then(response => response.json())
+					.then(filmData => filmData.title)
+					.catch(error => {
+						console.error('Error fetching film data:', error);
+						return '';
+					});
+				});
+
+			Promise.all(filmTitles)
+			.then(titles => {
+				const appearsInParagraph = document.createElement('p');
+				appearsInParagraph.textContent = 'Appears in:'
+				characterElement.appendChild(appearsInParagraph);
+
+				const filmList = document.createElement('ul');
+				titles.forEach(title => {
+					const filmItem = document.createElement('li');
+					filmItem.textContent = title;
+					filmList.appendChild(filmItem); 
+				})
+				characterElement.appendChild(filmList);
+			})	
+			}
+
+			if (character.species.length > 0) {
+
+				
+
+				const species = character.species.map(speciesLink => {
+					return fetch(speciesLink)
+					.then(response => response.json())
+					.then(speciesData => speciesData.name )
+					.catch(error =>{
+						console.error('Error fetching species data:', error)
+					})
+				})
+
+				Promise.all(species)
+				.then(speciesName => {
+					const speciesParagraph = document.createElement('p');
+					speciesParagraph.textContent = 'Species: ' + speciesName.join(', ');
+					characterElement.appendChild(speciesParagraph);
+
+					characterListContainer.appendChild(characterElement);
+
+
+				
+				});
+
+			}
+
+			
+
+
+
+
 				characterListContainer.appendChild(characterElement);
 
 
 			
 
-				
-	});
+	})	
+		
 })
 .catch(error=> {
-	console.error('Error fetching data')
+	console.error('Error fetching data', error)
 
 });
 

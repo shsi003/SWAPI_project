@@ -28,17 +28,48 @@ fetch(`https://swapi.py4e.com/api/vehicles`)
 			vehicleElement.innerHTML = `
 			<h2>${vehicle.name}</h2>
 			<img src="${imageUrls[vehicle.name]}" alt="${vehicle.name}"></img>
-			<p>model : ${vehicle.model}</p>
-			<p>manufactured by: ${vehicle.manufacturer}</p>
-			<p>price: ${vehicle.cost_in_credits}</p>
-			<p>passenger capacity: ${vehicle.passengers}</p>
-			<p>max speed: ${vehicle.max_atmosphering_speed}</p>
-			<p>crew needed to operate: ${vehicle.crew}</p>
-			<p>cargo capacity: ${vehicle.cargo_capacity}</p>
+			<p>Model : ${vehicle.model}</p>
+			<p>Manufactured by: ${vehicle.manufacturer}</p>
+			<p>Price: ${vehicle.cost_in_credits} credits</p>
+			<p>Passenger capacity: ${vehicle.passengers}</p>
+			<p>Max speed: ${vehicle.max_atmosphering_speed} km/h</p>
+			<p>Crew needed to operate: ${vehicle.crew}</p>
+			<p>Cargo capacity: ${vehicle.cargo_capacity} units</p>
+			<p>Vehicle class: ${vehicle.vehicle_class}</p>
 
 			`;
+
+			if (vehicle.films.length > 0) {
+
+				const filmTitles = [];
+
+				const filmPromises = vehicle.films.map(filmLink => {
+					return fetch(filmLink)
+					.then(response => response.json())
+					.then(filmData => {
+						filmTitles.push(filmData.title);
+					} )
+					.catch(error =>{
+						console.error('Error fetching film data:', error)
+					})
+				})
+
+				Promise.all(filmPromises)
+				.then(() => {
+					const filmsString = filmTitles.join(', ');
+
+					vehicleElement.innerHTML += `
+					<p>Appears in: ${filmsString}</p>`
+				});
+				
+				
+			
+
+
+
 			vehicleListContainer.appendChild(vehicleElement);
-	})
+	}
+});
 
  })
  .catch(error => {
