@@ -63,32 +63,9 @@ fetch(`https://swapi.py4e.com/api/people`)
 			})	
 			}
 
-			if (character.species.length > 0) {
+		
 
-				
-
-				const species = character.species.map(speciesLink => {
-					return fetch(speciesLink)
-					.then(response => response.json())
-					.then(speciesData => speciesData.name )
-					.catch(error =>{
-						console.error('Error fetching species data:', error)
-					})
-				})
-
-				Promise.all(species)
-				.then(speciesName => {
-					const speciesParagraph = document.createElement('p');
-					speciesParagraph.textContent = 'Species: ' + speciesName.join(', ');
-					characterElement.appendChild(speciesParagraph);
-
-					characterListContainer.appendChild(characterElement);
-
-
-				
-				});
-
-			}
+			
 
 			
 
