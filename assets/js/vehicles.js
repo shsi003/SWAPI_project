@@ -39,39 +39,20 @@ fetch(`https://swapi.py4e.com/api/vehicles`)
 
 			`;
 
-			if (vehicle.films.length > 0) {
+	
+            
 
-				const filmTitles = [];
-
-				const filmPromises = vehicle.films.map(filmLink => {
-					return fetch(filmLink)
-					.then(response => response.json())
-					.then(filmData => {
-						filmTitles.push(filmData.title);
-					} )
-					.catch(error =>{
-						console.error('Error fetching film data:', error)
-					})
-				})
-
-				Promise.all(filmPromises)
-				.then(() => {
-					const filmsString = filmTitles.join(', ');
-
-					vehicleElement.innerHTML += `
-					<p>Appears in: ${filmsString}</p>`
-				});
-				
+			
+			
 				
 			
 
 
 
 			vehicleListContainer.appendChild(vehicleElement);
-	}
-});
+	})
+})
+.catch(error=> {
+	console.error('Error fetching data', error)
 
- })
- .catch(error => {
-	console.error('Error fetching data')
- });
+});

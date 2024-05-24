@@ -1,3 +1,7 @@
+ //Code for looking up arrays and fetching data
+ //not meant to have any function outside of looking up data
+
+ /*
  fetchData();
  
  
@@ -24,7 +28,7 @@ showFetchData();
 async function showFetchData(){
 	try{
 
-		const response = await fetch (`https://swapi.py4e.com/api/films`);
+		const response = await fetch (`https://swapi.py4e.com/api/vehicles`);
 
 		if(!response.ok){
 			throw new Error("could not fetch data");
