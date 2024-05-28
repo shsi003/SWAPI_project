@@ -1,0 +1,13 @@
+{
+	"name": "SWAPI_schoolProject",
+	"version": "1.0.0",
+	"description": "A school project designed to show my competence with fetchAPI ",
+	"scripts" : {
+		"build" : "echo 'building the project...' && exit 0",
+		"start": "node index.js"
+
+	},
+	"author": "shsi003",
+	"license": "MIT",
+	"dependencies": {}
+}

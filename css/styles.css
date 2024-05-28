@@ -1,0 +1,108 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face{
+	font-family: 'Star Wars';
+	src:url(fonts/Star\ Wars.ttf);
+}
+
+body{
+	font-family: 'Courier New', Courier, monospace;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	background-image: url(../assets/images/backgrounds/mainBackground.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+main{
+	flex: 1;
+}
+
+header{
+	font-family:'Star Wars';
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: auto;
+	padding-top: 10px;
+	background-color: black;
+	color: white;
+	margin-top: 0;
+	border-bottom: 2px solid white;
+
+	
+}
+
+header p{
+	font-family: 'Courier New';
+	font-size: 10px;
+}
+
+.Category_container{
+	display: grid;
+	grid-template-columns : repeat(2, 1fr);
+	gap: 20px;
+	padding: 20px;
+	margin: 10px;
+	align-items: center;
+	
+
+}
+
+.Category_card{
+	border: 2px solid white;
+	font-family: 'Helvetica';
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	height: 100%;
+	text-align: center;
+	background: black;
+	
+
+}
+
+.Category_card img{
+	width: 450px;
+	height: 300px;
+	align-items: center;
+	justify-content: center;
+	object-fit: contain;
+	margin-bottom: 10px;
+
+	
+
+}
+
+.Category_title{
+	padding: 10px;
+	margin-top: 0;
+	border: 2px solid white;
+	color: white;
+	background-color: black;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.Category_description{
+	padding:10px;
+	margin: 10px;
+	border-top: 2px solid white;
+	color: white;
+}
+
+.Category_visit{
+	margin-top: 10px;
+	padding: 10px;
+	border: 2px solid white;
+	color: white;
+	background-color: black;
+	border-radius: 20px;
+	text-decoration: none;
+	align-self: center;
+}
